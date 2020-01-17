@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #000;
+  font-family: 'Open Sans', sans-serif;
+}
+
+main {
+  margin: 1em;
+  width: 100%;
+  text-align: center;
+}
+
+canvas {
+  width: 640px;
+  height: 480px;
+}
