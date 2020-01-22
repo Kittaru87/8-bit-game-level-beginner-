@@ -25,7 +25,7 @@ function runGame(game) {
     game.drawTileMap("terrain", stump, 2, 2, 12, 3);
     game.drawTileToPos("treasure", 3, 210, 240);
     game.drawTileToPos("treasure", 7, 73, 120);
-    // game.drawTileToPos("treasure", 9, 505, 307);
+    game.drawTileToPos("treasure", 9, 505, 307);
 
     var characterTile = 0;
     if (state.character.direction === 'left'){
@@ -72,7 +72,7 @@ window.addEventListener("keydown", function (event) {
 
 // game.collided = function (
 //   characterTileX1, characterTileY1, characterTile(1), characterTile(1),
-//   stump12, stump(3), stump(2), stump(2)
+//   stump12// stump(3), stump(2), stump(2)
 // ) {
 //   var thing1X2 = thing1X1 + thing1Width;
 //   var thing1Y2 = thing1Y1 + thing1Height;
@@ -82,8 +82,27 @@ window.addEventListener("keydown", function (event) {
 //          (thing1Y2 >= thing2Y1 && thing1Y1 <= thing2Y2)
 // }
 
+//don't fall off the map!
+function checkPlayerBounds() {
+    // Check bounds
+    if(state.character.pos[0] < 0) {
+        state.character.pos[0] = 0;
+    }
+    else if(state.character.pos[0] > canvas.width - state.character.size[0]) {
+        state.character.pos[0] = canvas.width - state.character.size[0];
+    }
 
-// finding offsetx and y ut place items
+    if(state.character.pos[1] < 0) {
+        state.character.pos[1] = 0;
+    }
+    else if(state.character.pos[1] > canvas.height - state.character.size[1]) {
+        state.character.pos[1] = canvas.height - state.character.size[1];
+    }
+}
+
+checkPlayerBounds() 
+
+//finding offsetx and y ut place items
 
 window.addEventListener("click", function (event) {
 console.log(event)
