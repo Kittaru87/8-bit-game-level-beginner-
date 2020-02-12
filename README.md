@@ -1,5 +1,8 @@
-23 Code Street project
+## Learning how to build a game ##
 
-1st level of an 8-bit game
+A small 23 Code Street project
 
-Collision detector next on the list# 8-bit-game-level-beginner-
+The 1st level of an canvas sprite game
+
+Just don't move him off the map because I haven't managed to implement collision detection yet. He will get lost.
+
